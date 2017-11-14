@@ -1,11 +1,5 @@
 <?php
 
-Route::get('/',['as'=>'home',function () {
-    return view("home");
-}]);
-
-
-Route::get('contacto',['as'=>'contacto',function () {
-    return view('contacto');
-}]);
-
+Route::get('/',['as'=>'home','uses'=>'PagesController@home']);
+Route::get('contacto',['as'=>'contacto','uses'=>'PagesController@contacto']);
+Route::post('contacto','PagesController@mensaje');
