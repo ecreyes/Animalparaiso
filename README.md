@@ -46,3 +46,19 @@ Para crear validaciones
 ```=php
 php artisan make:request NombreRequest
 ```
+
+ejecutar todas las migraciones de la bd (ejecuta el metedo up de las migraciones)
+```=php
+php artisan migrate
+```
+de esta forma se crean las tablas en la bd.
+
+deshacer la migracion creada en la bd (ejecuta metodo down)
+```=php
+php artisan migrate:rollback
+```
+
+crear una migracion para luego ejecutarla y generar la tabla
+```=php
+php artisan make:migration nombre_migracion --create=nombretabla
+```
