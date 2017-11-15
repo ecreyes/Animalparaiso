@@ -19,11 +19,19 @@ ahora se genera la key:
 ```php
 php artisan key:generate
 ```
-por ultimo solo hay que correr el servidor:
+y para correr el servidor:
 ```php
 php artisan serve
 ```
 
+# Configurando Base de datos
+Hay que abrir el archivo .env y modificar los siguientes parametros con los de ustedes:
+```=php
+DB_DATABASE=nombrebd
+DB_USERNAME=userbd
+DB_PASSWORD=passwordbd
+```
+como laravel usa mysql por defecto se puede usar la linea de comando que se uso con NodeJs o el workbench :)
 # Comandos:
 Crear nuevo proyecto
 ```=php
