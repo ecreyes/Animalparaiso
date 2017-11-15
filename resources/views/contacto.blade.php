@@ -11,6 +11,7 @@
 			<div class="col-4">
 				<h1>Contactanos</h1>
 				<form action="contacto" method="POST">
+					{!!csrf_field()!!}
 					<div class="form-group">
 						<label for="">Nombre</label>
 						<input class="form-control" type="nombre" name="nombre" value="{{old('nombre')}}" placeholder="Ingresa tu nombre">
