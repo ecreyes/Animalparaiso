@@ -38,10 +38,11 @@ Crear nuevo proyecto
 	laravel new proyecto
 ```
 
-Para crear controladores
+Para crear controlador
 ```=php
 php artisan make:controller NombreControlador
 ```
+
 Para crear validaciones
 ```=php
 php artisan make:request NombreRequest
@@ -62,3 +63,25 @@ crear una migracion para luego ejecutarla y generar la tabla
 ```=php
 php artisan make:migration nombre_migracion --create=nombretabla
 ```
+
+# Orden para usar REST
+Para crear controlador tipo REST
+```=php
+php artisan make:controller nombreControlador --resource
+```
+Para usar el ORM Eloquent y arrorarse el QueryBuilder
+```=php
+php artisan make:model Nombre
+```
+el nombre tiene que se igual que el de la tabla asociada en la BD pero en singular y la primera letra Mayuscula.
+ejemplo, si en la bd la tabla se llama 'mensajes', el modelo debe ser 'Mensaje'.
+
+Ahora si les da lo mismo esta convencion hay que colocar en el modelo creado
+```=php
+	//accede a la tabla mensajes de la bd
+    protected $table = 'mensajes';
+```
+el modelo independiente de como se llame, va a acceder a esa tabla xD
+
+tratar en este orden
+`CREATE`,`STORE`,`INDEX`

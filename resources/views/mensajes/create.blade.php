@@ -10,7 +10,7 @@
 			<div class="col-4"></div>
 			<div class="col-4">
 				<h1>Contactanos</h1>
-				<form action="contacto" method="POST">
+				<form action="{{route('mensajes.store')}}" method="POST">
 					{!!csrf_field()!!}
 					<div class="form-group">
 						<label for="">Nombre</label>

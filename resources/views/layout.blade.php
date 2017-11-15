@@ -25,7 +25,7 @@
 		            <a class="nav-link" href={{route('home')}}>Inicio</a>
 		          </li>
 		          <li class="{{activeMenu('contacto')}}">
-		            <a class="nav-link" href={{route('contacto')}}>Contacto</a>
+		            <a class="nav-link" href={{route('mensajes.create')}}>Contacto</a>
 		          </li>
 		        </ul>
 		      </div>
