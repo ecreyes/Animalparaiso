@@ -16,6 +16,9 @@ class PagesController extends Controller
     }
 
     public function mensaje(MensajeRequest $request){
-    	return $request->all();
+    	//obtiene en formato json los datos del formulario
+    	$data = $request->all();
+    	//regresa a la página anterior con un mensaje que se identifica con 'info'
+    	return back()->with('info','Tu mensaje se envio correctamente.');
     }
 }
