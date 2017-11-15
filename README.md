@@ -25,8 +25,16 @@ php artisan serve
 ```
 
 # Comandos:
-
+Crear nuevo proyecto
 ```=php
 	laravel new proyecto
-	php artisan make:controller NombreControlador
+```
+
+Para crear controladores
+```=php
+php artisan make:controller NombreControlador
+```
+Para crear validaciones
+```=php
+php artisan make:request NombreRequest
 ```

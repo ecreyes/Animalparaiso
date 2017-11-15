@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+//se importa la clase que maneja las validaciones de este contrlador
+use App\Http\Requests\MensajeRequest;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -14,7 +15,7 @@ class PagesController extends Controller
     	return view('contacto');
     }
 
-    public function mensaje(Request $request){
+    public function mensaje(MensajeRequest $request){
     	return $request->all();
     }
 }
