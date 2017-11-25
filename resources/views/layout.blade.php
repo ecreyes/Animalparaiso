@@ -24,7 +24,10 @@
 		          <li class="{{activeMenu('/')}}">
 		            <a class="nav-link" href={{route('home')}}>Inicio</a>
 		          </li>
-		          <li class="{{activeMenu('contacto')}}">
+		          <li class="{{activeMenu('mensajes')}}">
+		            <a class="nav-link" href={{route('mensajes.index')}}>Mensajes</a>
+		          </li>
+		          <li class="{{activeMenu('mensajes/create')}}">
 		            <a class="nav-link" href={{route('mensajes.create')}}>Contacto</a>
 		          </li>
 		        </ul>

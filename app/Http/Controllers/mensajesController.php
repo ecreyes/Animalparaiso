@@ -17,7 +17,8 @@ class mensajesController extends Controller
      */
     public function index()
     {
-        //
+        $mensajes = Mensaje::all();
+        return view('mensajes.index',compact('mensajes'));
     }
 
     /**
@@ -54,8 +55,9 @@ class mensajesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        //
+    {   
+        $mensaje = Mensaje::find($id);
+        return view('mensajes.show',compact('mensaje'));
     }
 
     /**
@@ -66,7 +68,8 @@ class mensajesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $mensaje = Mensaje::find($id);
+        return view('mensajes.edit',compact('mensaje'));
     }
 
     /**
@@ -76,9 +79,11 @@ class mensajesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(MensajeRequest $request, $id)
     {
-        //
+        $mensaje = Mensaje::find($id);
+        $mensaje->update($request->all());
+        return redirect()->route('mensajes.index');
     }
 
     /**
@@ -89,6 +94,8 @@ class mensajesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $mensaje = Mensaje::find($id);
+        $mensaje->delete();
+        return redirect()->route('mensajes.index');
     }
 }
