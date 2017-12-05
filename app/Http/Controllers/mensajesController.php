@@ -10,6 +10,10 @@ use App\Mensaje;
 
 class mensajesController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('auth',['except' => ['create','store'] ]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -45,7 +49,7 @@ class mensajesController extends Controller
         Mensaje::create($request->all());
         // si quiero ver el paquete json que se envio hacer return $request->all();
         //redireccionar
-        return redirect()->route('mensajes.index');
+        return redirect()->route('mensajes.create')->with('info', 'Hemos recibido tu mensaje');
     }
 
     /**

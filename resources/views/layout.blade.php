@@ -23,12 +23,23 @@
 		          	 <li class="{{activeMenu('/')}}">
 			            <a class="nav-link" href={{route('home')}}>Inicio</a>
 			          </li>
-			          <li class="{{activeMenu('mensajes')}}">
-			            <a class="nav-link" href={{route('mensajes.index')}}>Mensajes</a>
+			          @if(auth()->guest())
+			          <li class="{{activeMenu('login')}}">
+			            <a class="nav-link" href="/login">Login</a>
 			          </li>
 			          <li class="{{activeMenu('mensajes/create')}}">
 			            <a class="nav-link" href={{route('mensajes.create')}}>Contacto</a>
-			          </li>		            
+			          </li>		
+			          @endif
+
+			          @if(auth()->check())
+			          <li class="{{activeMenu('mensajes')}}">
+			            <a class="nav-link" href={{route('mensajes.index')}}>Mensajes</a>
+			          </li>
+			          <li class="{{activeMenu('login')}}">
+			            <a class="nav-link" href="/logout">Cerrar sesion de {{auth()->user()->name}}</a>
+			          </li>	
+			          @endif		            
 		          </ul>
 		          <form class="form-inline mt-2 mt-md-0">
 		            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
