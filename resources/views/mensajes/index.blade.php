@@ -8,20 +8,20 @@
         <table class="table">
           <thead class="thead-dark">
             <tr>
-              <th scope="col">Id</th>
-              <th scope="col">Nombre</th>
               <th scope="col">Correo</th>
+              <th scope="col">Asunto</th>
               <th scope="col">Mensaje</th>
+              <th scope="col">Fecha</th>
               <th scope="col">Acción</th>
             </tr>
           </thead>
           <tbody>
             @foreach ($mensajes as $mensaje)
             <tr>
-              <th scope="row">{{$mensaje->id}}</th>
-              <td>{{$mensaje->nombre}}</td>
-              <td>{{$mensaje->email}}</td>
+              <th scope="row">{{$mensaje->email}}</th>
+              <td>{{$mensaje->asunto}}</td>
               <td>{{$mensaje->mensaje}}</td>
+              <td>{{$mensaje->created_at}}</td>
               <td>
                 <a class="btn btn-primary" href="{{route('mensajes.show',$mensaje->id)}}" role="button">Mostrar</a>
                 <a class="btn btn-success" href="{{route('mensajes.edit',$mensaje->id)}}" role="button">Editar</a>

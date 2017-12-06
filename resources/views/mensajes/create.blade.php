@@ -13,15 +13,15 @@
 				<form action="{{route('mensajes.store')}}" method="POST">
 					{!!csrf_field()!!}
 					<div class="form-group">
-						<label for="">Nombre</label>
-						<input class="form-control" type="nombre" name="nombre" value="{{old('nombre')}}" placeholder="Ingresa tu nombre">
-						{{$errors->first('nombre')}}
-					</div>
-				    <div class="form-group">
 				   		<label for="exampleInputEmail1">Correo</label>
-				    	<input type="email" name="email" value="{{old('email')}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresa tu email">
+				    	<input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresa tu email">
 						{{$errors->first('email')}}
 				    </div>
+					<div class="form-group">
+						<label for="">Asunto</label>
+						<input class="form-control" type="asunto" name="asunto" value="{{old('asunto')}}" placeholder="Ingresa tu asunto">
+						{{$errors->first('asunto')}}
+					</div>
 				    <div class="form-group">
 					    <label for="exampleFormControlTextarea1">Mensaje</label>
 					    <textarea name ="mensaje" class="form-control" id="exampleFormControlTextarea1" rows="3">{{old('mensaje')}}</textarea>

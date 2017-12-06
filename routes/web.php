@@ -14,6 +14,9 @@ Route::get('login',['as'=>'login','uses'=>'Auth\LoginController@showLoginForm'])
 Route::post('login','Auth\LoginController@login');
 Route::get('logout','Auth\LoginController@logout');
 
+Route::post('send',['as'=>'send','uses'=>'mailController@send']);
+Route::get('email','mailController@email');
+
 /*
 Route::get('test',function(){
 	$user = new App\User;

@@ -9,5 +9,5 @@ class Mensaje extends Model
     //accede a la tabla mensajes de la bd
     protected $table = 'mensajes';
     //valida la asignación masiva de datos
-    protected $fillable = ['nombre','email','mensaje'];
+    protected $fillable = ['email','asunto','mensaje'];
 }

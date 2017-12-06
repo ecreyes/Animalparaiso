@@ -28,8 +28,8 @@ class MensajeRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre'=>'required',
             'email'=>'required|email',
+            'asunto'=>'required',
             'mensaje'=>'required'
         ];
     }
