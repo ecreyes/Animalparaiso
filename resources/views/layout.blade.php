@@ -24,9 +24,6 @@
 			            <a class="nav-link" href={{route('home')}}>Inicio</a>
 			          </li>
 			          @if(auth()->guest())
-			          <li class="{{activeMenu('login')}}">
-			            <a class="nav-link" href="/login">Login</a>
-			          </li>
 			          <li class="{{activeMenu('mensajes/create')}}">
 			            <a class="nav-link" href={{route('mensajes.create')}}>Contacto</a>
 			          </li>		
@@ -36,15 +33,32 @@
 			          <li class="{{activeMenu('mensajes')}}">
 			            <a class="nav-link" href={{route('mensajes.index')}}>Mensajes</a>
 			          </li>
-			          <li class="{{activeMenu('login')}}">
-			            <a class="nav-link" href="/logout">Cerrar sesion de {{auth()->user()->name}}</a>
-			          </li>	
 			          @endif		            
 		          </ul>
-		          <form class="form-inline mt-2 mt-md-0">
-		            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-		            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-		          </form>
+		          <ul class="navbar-nav justify-content-end">
+		          	@if(auth()->check())
+			          <div class="btn-group">
+						  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						    {{auth()->user()->name}}
+						  </button>
+						  <div class="dropdown-menu dropdown-menu-right">
+						    <a class="dropdown-item" href="/logout">Cerrar sesión</a>
+						  </div>
+					</div>	
+			        @endif
+			         @if(auth()->guest())
+			          	<form class="form-inline" method="POST" action="/login">
+			          		{!!csrf_field()!!}
+							  <div class="form-group">
+							    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email" name="email">
+							  </div>
+							  <div class="form-group mx-sm-3">
+							    <input class="form-control sm" id="inputPassword2" type="password" name="password" placeholder="Password">
+							  </div>
+							  <button type="submit" class="btn btn-outline-primary btm-sm">Iniciar Sesión</button>
+						</form>
+			        @endif	
+		          </ul>
 		        </div>
 	     	 </nav>		
 	</header>
