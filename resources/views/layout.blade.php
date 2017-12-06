@@ -33,6 +33,9 @@
 			          <li class="{{activeMenu('mensajes')}}">
 			            <a class="nav-link" href={{route('mensajes.index')}}>Mensajes</a>
 			          </li>
+			          <li class="{{activeMenu('voluntarios')}}">
+			            <a class="nav-link" href={{route('voluntarios.index')}}>Voluntarios</a>
+			          </li>
 			          @endif		            
 		          </ul>
 		          <ul class="navbar-nav justify-content-end">
@@ -42,6 +45,7 @@
 						    {{auth()->user()->name}}
 						  </button>
 						  <div class="dropdown-menu dropdown-menu-right">
+						  	<a class="dropdown-item" href="{{route('voluntarios.create')}}">Añadir Voluntario</a>
 						    <a class="dropdown-item" href="/logout">Cerrar sesión</a>
 						  </div>
 					</div>	

@@ -17,11 +17,19 @@ Route::get('logout','Auth\LoginController@logout');
 Route::post('send',['as'=>'send','uses'=>'mailController@send']);
 Route::get('email','mailController@email');
 
+
+Route::get('voluntarios/create',['as'=>'voluntarios.create','uses'=>'VoluntarioController@create']);
+Route::post('voluntarios',['as'=>'voluntarios.store','uses'=>'VoluntarioController@store']);
+Route::get('voluntarios',['as'=>'voluntarios.index','uses'=>'VoluntarioController@index']);
+Route::get('voluntarios/{id}/edit',['as'=>'voluntarios.edit','uses'=>'VoluntarioController@edit']);
+Route::put('voluntarios/{id}',['as'=>'voluntarios.update','uses'=>'VoluntarioController@update']);
+Route::delete('voluntarios/{id}',['as'=>'voluntarios.destroy','uses'=>'VoluntarioController@destroy']);
+
 /*
 Route::get('test',function(){
 	$user = new App\User;
-	$user->name = 'Jorge';
-	$user->email = 'jorge@email.cl';
+	$user->name = 'Admin';
+	$user->email = 'admin@email.cl';
 	$user->password = bcrypt('123');
 	$user->save();
 
