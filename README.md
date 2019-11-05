@@ -1,5 +1,5 @@
-# Animalparaiso
-Plataforma para la ONG
+# Plataforma laravel
+Ejemplo de uso de laravel
 
 # Instalación del proyecto.
 
